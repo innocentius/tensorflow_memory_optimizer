@@ -3,11 +3,11 @@ import tensorflow as tf
 os.environ[CUDA_DEVICE_ORDER]=PCI_BUS_ID
 os.environ[CUDA_VISIBLE_DEVICES]=0  # 指定CUDA可以看到的GPU，编号从0开始
 gpus = tf.config.experimental.list_physical_devices('GPU')
-if gpus
-    try
-        for gpu in gpus
+if gpus:
+    try:
+        for gpu in gpus:
             tf.config.experimental.set_memory_growth(gpu, True) #设置CUDA根据模型大小占用内存
-    except RuntimeError as e
+    except RuntimeError as e:
         print(e)
 print(tf.__version__)
 

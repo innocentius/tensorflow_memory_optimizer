@@ -1,7 +1,7 @@
 import os
 import tensorflow as tf
-os.environ[CUDA_DEVICE_ORDER]=PCI_BUS_ID
-os.environ[CUDA_VISIBLE_DEVICES]=0  # 指定CUDA可以看到的GPU，编号从0开始
+os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
+os.environ["CUDA_VISIBLE_DEVICES"]="0"  # 指定CUDA可以看到的GPU，编号从0开始
 # OS environment的代码要放在tensorflow init的上面。
 gpus = tf.config.experimental.list_physical_devices('GPU')
 if gpus:
